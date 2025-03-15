@@ -1,0 +1,125 @@
+<div>
+    <!-- Navbar -->
+    <div
+        id="global-navbar"
+        style=""
+        class="h-20 flex flex-col relative"
+    >
+        <!-- Navbar main content -->
+        <div class="h-full flex flex-row">
+            <!-- Logo -->
+            <div class="mx-6 flex items-center">
+                <a href="/">
+                    <div class="flex flex-row justify-center items-center">
+                        <!-- prevent the logo from shrinking on screens below 380px width -->
+                        <div style="min-width: 40px !important;">
+                            <img style="width: 40px" class="mr-2.5" src={~p"/static/images/icons/cauldron.svg"} alt="MeldChat Logo Icon" />
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex flex-row items-end">
+                                <p class="text-xl text-white font-bold whitespace-nowrap leading-5">
+                                    MeldChat
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Navigation elements desktop -->
+            <div
+                class="navbar-link-container-desktop flex-row ml-auto items-center"
+            >
+                <div class="flex flex-row ml-auto items-center">
+                  <%= for link <- nav_links() do %>
+                    <a
+                      class="font-normal text-sm leading-3 text-white text-center mr-8 whitespace-nowrap"
+                      href={link.url}
+                    >
+                      <%= link.text %>
+                    </a>
+                  <% end %>
+                  <a href="/app" style="color: white !important; font-weight: normal !important;" class="text-sm font-normal px-3 mr-8 flex items-center justify-center h-10 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                      Open MeldChat
+                  </a>
+                </div>
+            </div>
+
+            <!-- Navbar hamburger button mobile -->
+            <div
+                class="navbar-hamburger-button-mobile ml-auto my-auto mr-6 flex-row align-end justify-center"
+            >
+                <!-- add min width to prevent the hamburger button from shrinking on screens below 380px width -->
+                <img
+                    id="open-mobile-navbar-btn"
+                    style="height: 36px; min-width: 36px !important;"
+                    class="cursor-pointer"
+                    src={~p"/static/images/heroicons/hamburger-green.svg"}
+                />
+                <img
+                    id="close-mobile-navbar-btn"
+                    style="height: 36px"
+                    class="cursor-pointer"
+                    src={~p"/static/images/heroicons/close-green.svg"}
+                    hidden=""
+                />
+            </div>
+        </div>
+
+        <!-- Navbar dropdown mobile -->
+        <div
+            class="navbar-dropdown-mobile hidden absolute w-full shadow-md z-30 py-6 text-white"
+            style="
+                top: 100%;
+                border-bottom: 1px solid #87c232;
+                border-top: 1px solid #87c232;
+                background-color: #181c18;
+            "
+        >
+            <div class="flex flex-col items-start ml-6 gap-5">
+              <%= for link <- nav_links() do %>
+                <a
+                  class="text-md leading-3 text-center mr-8 whitespace-nowrap"
+                  href={link.url}
+                >
+                  <%= link.text %>
+                </a>
+              <% end %>
+            </div>
+        </div>
+    </div>
+    <div style="width: 92%" class="h-px bg-zinc-300 mx-auto"></div>
+    <div id="main-content"style="min-height: calc(100vh - 80px - 128px)">
+        <%= @inner_content %>
+    </div>
+    <div style="width: 92%" class="h-px bg-zinc-300 mx-auto"></div>
+    <!-- Footer -->
+    <div
+        class="footer-section h-32 mt-auto"
+    >
+        <div class="flex flex-col">
+            <a href="/ ">
+                <p class="lucasdev-logo text-xl font-bold whitespace-nowrap text-zinc-500">
+                  MeldChat
+                </p>
+            </a>
+            <p class="text-zinc-500 text-sm">© All rights reserved 2025</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <div class="flex flex-row items-center align-center justify-enter">
+                <a href="mailto:info@lucasdevsite@gmail.com" class="flex flex-row items-center align-center justify-center">
+                    <img class="h-4 w-4 ml-1 mr-2" src={~p"/static/images/heroicons/email.svg"} alt="Email icon" />
+                    <p class="text-sm text-zinc-500">
+                        meldchatsite@gmail.com
+                    </p>
+                </a>
+            </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 150px 150px">
+          <%= for link <- footer_links() do %>
+            <div style="height: 28px;" class="text-sm text-zinc-500 leading-3 whitespace-nowrap flex flex-row items-center align-center">
+              <a href={link.url}><%= link.text %></a>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</div>

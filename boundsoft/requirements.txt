@@ -1,0 +1,8 @@
+django==2.2.8
+psycopg2-binary==2.8.4
+
+# used on the server
+gunicorn==20.0.4
+
+# used for deployment
+fabric==2.5.0

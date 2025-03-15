@@ -1,0 +1,113 @@
+@import "./fonts.css";
+
+.page-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+  padding: 5vh 5vw;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-container > * {
+  padding: 10px;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.name-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.name-input-container {
+  margin-top: 5px;
+}
+.name-input {
+  margin-right: 5px;
+}
+.submit-name {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.title-container {
+  display: grid;
+  grid-template-rows: 3fr auto 15px auto 3fr;
+
+  justify-items: center;
+  align-items: center;
+
+  font-size: .9rem;
+}
+
+.room-details > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-button {
+  background-color: var(--purple);
+  color: var(--white);
+
+  height: 20px;
+  width: 100%;
+
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+  padding: 1.5rem;
+
+  cursor: pointer;
+  transition: filter 0.2s;
+  border: none;
+  margin: 10px;
+}
+
+.game-title {
+  font-size: 3.5rem;
+}
+
+.homepage_button:hover {
+  filter: brightness(80%);
+}
+
+#game-ui {
+  position: absolute;
+  margin: 25px;
+}
+
+.bottom-ui {
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  /* Alter this height as necessary to fit the elements we need */
+  min-height: 120px;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  justify-items: center;
+  align-items: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* You might move it to global */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}

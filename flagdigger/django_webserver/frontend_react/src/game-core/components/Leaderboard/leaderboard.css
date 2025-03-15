@@ -1,0 +1,66 @@
+.leaderboard-container {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: rgba(115, 116, 117, .4);
+  /* max-width: 210px;
+  width: 100%; */
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  user-select: none;
+}
+
+.leaderboard-container:hover {
+  /*
+  This rule plus the 'user-select: none' on the container
+  above make it so that the browser doesn't highlight the
+  leaderboard automatically when the user isn't actively
+  hovering over it
+  */
+  user-select: initial;
+}
+
+.leaderboard-container h2 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.leaderboard-container tr td {
+  text-align: right;
+  font-size: 14px;
+}
+
+.leaderboard-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: right;
+  direction: rtl;
+}
+
+.leaderboard-contents {
+  display: grid;
+  grid-template-columns: auto 45px 45px;
+  column-gap: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.leaderboard-cell.active-player {
+  color: #f32020;
+}
+
+.leaderboard-cell {
+  text-align: right;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.leaderboard-player {
+    color: #f32020;
+}

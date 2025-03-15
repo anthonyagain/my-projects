@@ -1,0 +1,40 @@
+{
+  "name": "desktop-monitoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "./node_modules/.bin/electron-rebuild"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "18",
+    "electron-rebuild": "^3.2.9",
+    "electron-reload": "^2.0.0-alpha.1",
+    "tailwindcss": "^3.3.3"
+  },
+  "dependencies": {
+    "@spacek33z/iohook": "^0.10.2",
+    "active-win": "^8.0.3",
+    "electron-is-dev": "^2.0.0",
+    "extract-file-icon": "^0.3.2",
+    "jimp": "^0.16.2",
+    "socket.io-client": "^4.5.4"
+  },
+  "iohook": {
+    "targets": [
+      "electron-103"
+    ],
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64"
+    ]
+  }
+}

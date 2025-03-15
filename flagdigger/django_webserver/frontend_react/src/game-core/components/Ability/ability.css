@@ -1,0 +1,168 @@
+.ability-list {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(100% + 9px);
+    display: flex;
+}
+
+.ability {
+    position: relative;
+    margin-right: 17px;
+    pointer-events: all;
+}
+
+.ability:hover .ability-description{
+    opacity: 1;
+    visibility: visible;
+}
+
+.ability:last-child {
+    margin-right: 0;
+}
+
+.ability-key {
+    text-align: center;
+    position: absolute;
+    left: -12px;
+    bottom: -7px;
+    border-radius: 50%;
+    background: rgba(173, 149, 83, .9);
+    font-size: 14px;
+    min-width: 21px;
+}
+
+.ability-image {
+    height: 47px;
+    position: relative;
+    text-align: center;
+    width: 47px;
+}
+
+.ability-image img {
+    width: 100%;
+}
+
+.ability-manacost {
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 50%;
+    background: rgba(50, 90, 199, .9);
+    font-size: 14px;
+    min-width: 21px;
+}
+
+.ability-description {
+    position: absolute;
+    left: 0;
+    transform: translateX(-35%);
+    bottom: calc(100% + 2px);
+    width: 240px;
+    background: rgba(36, 36, 36, .9);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .25s ease;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    font-size: 14px;
+}
+
+.ability-description-text{
+    font-style: italic;
+    font-size: 15px;
+}
+
+.ability-description-cell {
+    padding: 4px;
+    border-bottom: 1px solid #000;
+}
+
+.ability-description-blue{
+    color: rgb(50, 90, 199);
+}
+
+.ability-description-blue{
+    color: rgb(50, 90, 199);
+}
+
+.ability-description-cell:last-child {
+    border-bottom: none;
+}
+
+.active-ability {
+  border: 2px solid green;
+}
+/*
+.cooldown-timer[data-style="smooth"] div {
+    height: 5px;
+    animation: roundtime calc(var(--cooldown) * 1s) steps(var(--cooldown)) forwards;
+    transform-origin: left center;
+    background: linear-gradient(to bottom, red, #900);
+}
+/*
+.cooldown-indicator {
+    position: relative;
+    color: rgb(86, 95, 117);
+    opacity: 0.5;
+    width: 47px;
+    height: 47px;
+}
+*/
+
+.cooldown-indicator {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+.cooldown-DIG {
+    background-color: grey;
+    opacity: .85;
+    height: 100%;
+    animation: cooldown-animation .5s linear forwards;
+}
+
+.cooldown-SHOOT_DIRT {
+    background-color: grey;
+    opacity: .85;
+    height: 100%;
+    animation: cooldown-animation .5s linear forwards;
+}
+
+.cooldown-SHOOT_CROSSBOW {
+    background-color: grey;
+    opacity: .85;
+    height: 100%;
+    animation: cooldown-animation .5s linear forwards;
+}
+
+.cooldown-THROW_TNT {
+    background-color: grey;
+    opacity: .85;
+    height: 100%;
+    animation: cooldown-animation 5s linear forwards;
+}
+
+.cooldown-active div{
+    text-align: center;
+    transform: translateY(50%);
+}
+
+.dirt-inventory {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    left: 50%;
+    opacity: 0.9;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes cooldown-animation {
+    from { height: 100% }
+    to { height: 0% }
+}

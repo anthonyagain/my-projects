@@ -1,0 +1,2 @@
+# ignore this file which is a copy of the production db
+createdb.sql

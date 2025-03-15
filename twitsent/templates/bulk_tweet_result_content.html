@@ -1,0 +1,13 @@
+<p class="result-text">I found {{ total_count }} recent tweets that include the search query
+  <span class="blue-highlight">{{ search_query }}.</span>
+</p>
+<p class="result-text">
+  <span class="green-highlight">{{ positive_count }}</span> of them were positive and
+  <span class="red-highlight">{{ negative_count }}</span> of them were negative,
+  with an average confidence of {{ average_confidence }}.
+</p>
+<p class="result-text">Example tweets found:</p>
+
+{% autoescape off %}
+  {{ tweet_results_html }}
+{% endautoescape %}

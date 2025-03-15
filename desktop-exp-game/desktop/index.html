@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="output.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            .smooth-slide {
+                transition: all 0.3s ease;
+            }
+            .fade-out {
+              animation: fade-out 1s forwards;
+            }
+
+            @keyframes fade-out {
+              0% { opacity: 1; transform: translateY(0); }
+              100% { opacity: 0; transform: translateY(-20px); }
+            }
+        </style>
+    </head>
+    <body class="w-full h-full flex flex-col">
+        <div class="relative h-36 w-full">
+            <div class="flex flex-row align-items-center justify-items-center">
+                <!-- trainer -->
+                <div class="absolute left-0 bottom-0 ml-3">
+                    <img class="h-20" src="static/trainer.png" />
+                    <div
+                        id="js-trainer-level"
+                        class="leading-tight rounded px-0.5 absolute bg-gray-700 bg-opacity-60 text-white bottom-0 right-0 z-10"
+                    ></div>
+                </div>
+                <!-- pokemon image -->
+                <div class="w-40 h-36 mx-auto relative">
+                    <div
+                        id="js-pokemon-image-container"
+                        class="relative flex flex-row items-center justify-center w-full h-full"
+                    >
+                        <div
+                            id="js-pokemon-level"
+                            class="leading-tight rounded px-0.5 absolute bg-gray-700 bg-opacity-60 text-white z-10"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-4 relative">
+            <!-- pokemon exp bar -->
+            <div
+                class="absolute bottom-0 flex items-center justify-center w-full"
+            >
+                <div
+                    class="bg-gray-200 rounded-full h-2 w-64 relative border border-black box-border"
+                >
+                    <!-- Filled Bar -->
+                    <div
+                        id="js-exp-bar"
+                        class="bg-green-400 rounded-full h-1.5 rounded-full box-border"
+                    ></div>
+                    <!-- Grey Vertical Lines -->
+                    <div
+                        class="absolute top-0 left-0 flex justify-between w-full h-full px-2 box-border"
+                    >
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                        <div class="bg-gray-400 w-0.5 h-1.5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative w-full flex-grow flex flex-col">
+            <div class="absolute top-0 left-0 w-full flex flex-row justify-end items-center h-10">
+              <!-- <div id="js-training-text" class="mr-4 text-sm font-bold whitespace-no-wrap flex flex-row justify-center items-center">Start Training:</div> -->
+              <div id="js-training-timer" class="flex flex-row justify-center items-center mr-2 h-4 w-40 text-sm font-bold"></div>
+              <div class="flex flex-row justify-center items-center">
+                <div id="js-toggle-training-container" class="mr-4 border border-black border-box relative w-8 h-4 bg-red-400 rounded-full cursor-pointer">
+                  <div id="js-toggle-training-btn" style="height: 14px; width: 14px;" class="absolute top-0 left-0 bg-white rounded-full smooth-slide"></div>
+                </div>
+              </div>
+            </div>
+            <div class="overflow-y-auto flex flex-col mx-4 mt-10">
+              <div class="font-bold">Bonus EXP</div>
+              <ul id="js-bonus-exp-tasks" class="text-md overflow-y-auto h-40"></ul>
+              <div class="flex flex-row mt-3">
+                <input id="js-task-text" style="width: 215px;" class="border border-black rounded h-6 text-md px-1.5" />
+                <div id="js-add-task" class="bg-gray-300 rounded text-center flex flex-row justify-center items-center h-6 ml-2 px-1.5 cursor-pointer">Add</div>
+              </div>
+            </div>
+            <div class="mt-auto w-full">
+                <div class="mx-2">
+                    <div class="text-sm">Programs which generate EXP:</div>
+                    <div
+                        id="js-exp-programs"
+                        style="min-height: 20px;"
+                        class="my-1 h-16 overflow-y-auto"
+                    ></div>
+                </div>
+                <div class="mx-2">
+                    <div class="text-sm">Other running programs:</div>
+                    <div
+                        id="js-running-programs"
+                        class="mt-1 mb-2 h-10 overflow-y-auto"
+                    ></div>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="main.js"></script>
+    </body>
+</html>

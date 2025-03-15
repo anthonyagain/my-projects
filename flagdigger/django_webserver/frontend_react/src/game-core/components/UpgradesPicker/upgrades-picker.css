@@ -1,0 +1,113 @@
+.upgrades {
+    margin-bottom: 15px;
+    width: 100%;
+    padding-left: 30px;
+}
+
+.upgrades-header {
+    font-weight: 600;
+    margin-bottom: 9px;
+    font-size: 14px;
+}
+
+.upgrades-list {
+    display: flex;
+    flex-direction: column;
+    pointer-events: all;
+}
+
+.upgrades-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.upgrades-item.upgrades-item-disabled {
+    cursor: not-allowed;
+    opacity: .6;
+}
+
+.upgrades-item.upgrades-item-disabled * {
+    cursor: not-allowed;
+}
+
+.upgrades-item:last-child {
+    margin-bottom: 0px;
+}
+
+.upgrades-item-increase {
+    padding: 3px 5px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.upgrades-item-info {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    color: white;
+    padding: 3px 5px;
+    background: rgba(41, 41, 41, 1);
+    transition: all .5s ease-in-out;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.upgrades-item-info:hover {
+    background: rgba(41, 41, 41, 0.6);
+}
+
+.upgrades-item-info span {
+    position: relative;
+    z-index: 50;
+}
+
+.upgrades-item-purple {
+    background-color: rgb(89, 42, 131, 1);
+    transition: all .5s ease-in-out;
+}
+
+.upgrades-item-purple:hover {
+    background: rgba(89, 42, 131, 0.8);
+}
+
+.upgrades-item-green {
+    background: rgba(52, 146, 86, 1);
+    transition: all .5s ease-in-out;
+}
+
+.upgrades-item-green:hover {
+    background: rgba(52, 146, 86, 0.8);
+}
+
+.upgrades-item-red {
+    background: rgb(134, 17, 17, 1);
+    transition: all .5s ease-in-out;
+}
+
+.upgrades-item-red:hover {
+    background: rgba(134, 17, 17, 0.8);
+}
+
+.upgrade-item-upgrade-wrapper {
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    right: 0px;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    padding-left: 2px;
+}
+
+.upgrade-item-upgrade-part {
+    width: calc(10% - 2px);
+    margin-right: 2px;
+    opacity: 0.6;
+}
+
+.upgrade-item-upgrade-part:last-child {
+    margin-right: 0;
+}

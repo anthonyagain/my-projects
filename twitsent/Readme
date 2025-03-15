@@ -1,0 +1,6 @@
+twitsent was a college project I wrote back when Twitter had an open and free API.
+
+It retrieves recent tweets using an input search term and runs them through a sentiment
+classification model, returning the data in a nice user interface showing the general sentiment
+of Twitter users on the given topic. The user interface also shows some example tweets and
+their classification, and allows you to input text of your own to text the classification model.

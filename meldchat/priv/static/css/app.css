@@ -1,0 +1,83 @@
+/* This file is for your main application CSS */
+
+/* New font */
+body {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.meldchat-logo {
+    font-family: verdana, arial, helvetica, sans-serif;
+}
+
+/* navbar on mobiless */
+@media (min-width: 1101px) {
+    .navbar-hamburger-button-mobile {
+        display: none;
+    }
+    .navbar-link-container-desktop {
+        display: flex;
+    }
+}
+@media (max-width: 1100px) {
+    .navbar-hamburger-button-mobile {
+        display: flex;
+    }
+    .navbar-link-container-desktop {
+        display: none;
+    }
+}
+
+/* Re-align footer on mobile */
+@media (max-width: 800px) {
+    .footer-section {
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        padding-left: 24px;
+        padding-top: 16px;
+    }
+    .footer-section > * {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+}
+@media (min-width: 801px) {
+    .footer-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+/* begin navbar light mode styles */
+#global-navbar {
+  /* background-color: rgb(212 212 216) !important; */ /* bg-zinc-300 */
+  /* background-color: rgb(228 228 231) !important; /* bg-zinc-200 */
+  /* background-color: white !important; */
+  /* background-color: rgb(39 39 42) !important; */ /* bg-zinc-800 */
+  /* border-bottom: 1px solid black !important; */
+  /* border-bottom: none !important; */
+
+  /* height: 60px; */
+}
+#global-navbar p, #global-navbar a {
+  color: black;
+}
+
+#global-navbar .navbar-link-container-desktop a, #global-navbar .navbar-dropdown-mobile a {
+    font-weight: 500;
+}
+
+/* make the navbar open/close buttons on mobile black instead of green -
+do it this way instead of embedding an extra image so that it doesn't make
+the javascript complicated */
+#open-mobile-navbar-btn, #close-mobile-navbar-btn {
+  filter: brightness(0);
+}
+.navbar-dropdown-mobile {
+  background-color: rgb(228, 228, 231) !important; /* bg-zinc-900 */
+  border-color: black !important
+}
+
+/* end navbar styles */

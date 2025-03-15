@@ -1,0 +1,90 @@
+
+.register-page-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+@media (min-width: 960px) {
+    .register-page {
+        height: 100vh;
+        position: relative;
+    }
+
+    .register-page-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+}
+
+.register-page h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.register-form {
+    max-width: 420px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.register-form .form-group label {
+    margin-bottom: 4px;
+}
+
+.register-form .form-group label span {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.register-form .form-group-checkbox {
+    margin-right: 4px;
+}
+
+.register-form .form-group input {
+    border-radius: 4px;
+    border: none;
+    padding: 4px 7px;
+}
+
+.register-form .form-group .form-group-error {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    font-size: 14px;
+    color: rgba(241, 8, 8, 0.89);
+}
+
+.register-submit {
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(41, 138, 37, .9);
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 5px 8px;
+    color: white;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.register-success {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 22px;
+}

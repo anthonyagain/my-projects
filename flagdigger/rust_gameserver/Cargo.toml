@@ -1,0 +1,24 @@
+[package]
+name = "rust_gameserver"
+version = "0.1.0"
+authors = []
+edition = "2018" # edition of rust
+
+# NOTE: Currently using rust version 1.50.0-nightly, specifically for
+# type_alias_impl_trait and min_const_generics. Try to avoid using unstable
+# features unless they provide significant benefit and are likely to become
+# stable in the future.
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-std = { version = "1.6.5", features = ["attributes", "unstable"] }
+async-tungstenite = { version = "0.9.2", features = ["async-std-runtime"] }
+futures = "0.3.6"
+bs_box2d = { path = "./bs_box2d" }
+serde_json = "1.0.59"
+serde = { version = "1.0.117", features = ["derive"] }
+uuid = { version = "0.8", features = ["v4"] }
+bs_macros = { path = "./bs_macros" }
+spin_sleep = "1.0.0"
+parking_lot = "0.11.1"

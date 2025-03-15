@@ -1,0 +1,298 @@
+<html>
+<!-- Import Materialize UI resources -->
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    {% csrf_token %}
+    <div class="page">
+      <div class="title-container">
+        <h1 class="title">Twitter Sentiment Analysis</h1>
+        <p class="subtitle">project by Anthony MacKay and Rohith Kamisetty</p>
+      </div>
+      <div class="page-container">
+        <!-- Main widget -->
+        <div class="tab-container">
+          <div class="row">
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#test1">Bulk Tweet Sentiment</a></li>
+                <li class="tab col s3"><a href="#test2">Tweet Sentiment</a></li>
+                <li class="tab col s3"><a href="#test3">Custom Text Sentiment</a></li>
+              </ul>
+            </div>
+            <!-- BULK TWEET SENTIMENT SECTION -->
+            <div id="test1" class="widget-content s12">
+              <div class="widget-content-2">
+                <p class="input-text result-text">Input a search term:</p>
+                <div class="submit-content">
+                  <div class="input-field col s6 input-field-wrapper">
+                    <input id="js-bulk-search-query" class="my-input-field" type="text">
+                    <label for="js-bulk-search-query">Search query</label>
+                  </div>
+                  <a id="js-search-btn" class="waves-effect waves-light btn">Search</a>
+                </div>
+                <div id="js-bulk-result-content" class="result-content">
+                </div>
+              </div>
+            </div>
+            <div id="test2" class="widget-content s12">
+              <div class="widget-content-2">
+                <p class="input-text result-text">Input the URL to a tweet:</p>
+                <div class="submit-content">
+                  <div class="input-field col s6 input-field-wrapper">
+                    <input id="js-single-tweet-query" class="my-input-field" type="text">
+                    <label for="js-single-tweet-query">Tweet URL</label>
+                  </div>
+                  <a id="js-single-tweet-btn" class="waves-effect waves-light btn">Submit</a>
+                </div>
+                <div id="js-single-tweet-result-content" class="smaller-result-content">
+                </div>
+              </div>
+            </div>
+            <div id="test3" class="widget-content s12">
+              <div class="widget-content-2">
+                <p class="input-text result-text">Input custom text for evaluation:</p>
+                <div class="submit-content">
+                  <div class="input-field col s6 input-field-wrapper">
+                    <input id="js-custom-text-input" class="my-input-field" type="text">
+                    <label for="js-custom-text-input">Custom text</label>
+                  </div>
+                  <a id="js-custom-text-btn" class="waves-effect waves-light btn">Submit</a>
+                </div>
+                <div id="js-custom-text-result-content" class="smaller-result-content">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0px;
+  }
+  .page {
+    width: 100vw;
+  }
+  .title-container {
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .title {
+    font-size: 35px;
+    margin: 0px;
+  }
+  .subtitle {
+    margin: 0px;
+  }
+  .page-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+  }
+  .tab-container {
+    width: 800px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #D8D8D8;
+    border-radius: 10px;
+    min-height: calc(100vh - 200px);
+  }
+  .col {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    height: 48px;
+  }
+  .col.s3 {
+    width: 33.33% !important;
+  }
+  a {
+    color: #003c8f !important;
+  }
+  a:focus.active {
+    background-color: #64b5f6 !important;
+  }
+  .indicator {
+    background-color: #1565c0 !important;
+  }
+  .row {
+    height: 100%;
+  }
+  .widget-content {
+    height: 100%;
+  }
+  .widget-content-2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+  }
+  .submit-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: calc(100% / 5 * 4) !important;
+  }
+  .my-input-field {
+    width: 100% !important;
+    margin-right: 20px !important;
+  }
+  .btn {
+    align-self: center;
+  }
+  .input-field-wrapper {
+    margin-left: 0px !important;
+    margin-right: 15px !important;
+    width: calc(100% - 80px) !important;
+  }
+  .result-text {
+    font-size: 20px;
+  }
+  .red-highlight {
+    background-color: #ef9a9a;
+  }
+  .blue-highlight {
+    background-color: #e3f2fd;
+  }
+  .green-highlight {
+    background-color: #81c784;
+  }
+  .result-tweet {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+  .sentiment-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+    justify-content: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    height: auto;
+    padding: 10px;
+  }
+  .twitter-tweet {
+    width: 80% !important;
+    border-left: 5px solid #1565c0 !important;
+  }
+  .sentiment-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .input-text {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  .smaller-result-content {
+    padding-top: 20px;
+  }
+</style>
+
+<script>
+  $(document).ready(function(){
+    $('.tabs').tabs();
+
+    let setCSRFHeader = (xhr) => {
+      let CSRFToken = $("[name=csrfmiddlewaretoken]").val();
+      xhr.setRequestHeader('X-CSRFToken', CSRFToken);
+    }
+
+    // Submit event for search query page.
+    $("#js-search-btn").click((e) => {
+      let searchQuery = $("#js-bulk-search-query").val().trim();
+
+      if (searchQuery == "") {
+        return;
+      }
+
+      let data = JSON.stringify({
+        "request_type": "SEARCH",
+        "search_query": searchQuery
+      });
+
+      $.ajax({
+        type: "POST",
+        url: "/",
+        data: data,
+        beforeSend: setCSRFHeader,
+        success: (response) => {
+          $("#js-bulk-result-content").empty();
+          $("#js-bulk-result-content").append(response);
+        }
+      });
+    });
+
+    // Submit event for single tweet sentiment page.
+    $("#js-single-tweet-btn").click((e) => {
+      let tweetURL = $("#js-single-tweet-query").val().trim();
+
+      if (tweetURL == "") {
+        return;
+      }
+
+      let data = JSON.stringify({
+        "request_type": "SINGLE",
+        "tweet_url": tweetURL
+      });
+
+      $.ajax({
+        type: "POST",
+        url: "/",
+        data: data,
+        beforeSend: setCSRFHeader,
+        success: (response) => {
+          $("#js-single-tweet-result-content").empty();
+          $("#js-single-tweet-result-content").append(response);
+        }
+      });
+    });
+
+    // Submit event for custom text sentiment page.
+    $("#js-custom-text-btn").click((e) => {
+      let customText = $("#js-custom-text-input").val().trim();
+
+      if (customText == "") {
+        return;
+      }
+
+      let data = JSON.stringify({
+        "request_type": "CUSTOM",
+        "custom_text": customText
+      });
+
+      $.ajax({
+        type: "POST",
+        url: "/",
+        data: data,
+        beforeSend: setCSRFHeader,
+        success: (response) => {
+          $("#js-custom-text-result-content").empty();
+          $("#js-custom-text-result-content").append(response);
+        }
+      });
+    });
+  });
+</script>

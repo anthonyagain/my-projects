@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<title>Shift Blocker - Options</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+		<div class="box" id="timerstatus">
+			<u>Sleep Timer ON</u><br />
+			<span id="timeleft"></span><br />
+			remaining<br />
+			<a class="cancel" id="cancel">Cancel</a>
+		</div>
+		<div class="box" id="optionsbox">
+			<div class="header">
+				<div class="subheader1">
+					<img src="images/icon128.png" height="128" width="128" />
+				</div>
+				<div class="subheader2">
+					<img src="images/options-header.png" alt="Shift Blocker - Options" />
+				</div>
+				<div class="subheader3">
+					<h5 id="version">Version <span id="versionheader"></span>&nbsp;&nbsp;</h5>
+				</div>
+			</div>
+
+			<!-- main power switch -->
+			<div class="optionrow" id="toprow">
+				<div class="mainpower">
+					<p>Main Power Switch</p>
+					<div class="onoffswitch">
+					    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+					    <label class="onoffswitch-label" for="myonoffswitch">
+					        <div class="onoffswitch-inner"></div>
+					        <div class="onoffswitch-switch"></div>
+					    </label>
+					</div>
+                    <p>Toggle Block Type</p>
+                    <div class="onoffswitch">
+					    <input type="checkbox" name="blocktypeswitch" class="onoffswitch-checkbox" id="blocktypeswitch" checked>
+					    <label class="onoffswitch-label" for="blocktypeswitch">
+					        <div class="onoffswitch-inner"></div>
+					        <div class="onoffswitch-switch"></div>
+					    </label>
+					</div>
+				</div>
+			</div>
+
+			<!-- sites to block -->
+			<div class="newrow">
+				<div class="newleft">
+					<div>
+						<h3 class="blocklist-header">Regular Blocklist</h3>
+						<p class="block-description">Regular filters which can be turned on and off.</p>
+					</div>
+					<textarea class="input-area" cols="30" rows="20" id="blockbox" placeholder=""></textarea>
+					<br />
+					<button class="saveblocklist" id="saveblocklist">Save Blocklist</button>
+				</div>
+				<div class="newright">
+					<div>
+						<h3 class="blocklist-header">Permanent Blocklist</h3>
+						<p class="block-description">These filters are always active and cannot be edited.</p>
+					</div>
+					<textarea class="input-area" cols="30" rows="20" id="appendblockbox" placeholder=""></textarea>
+					<br />
+					<button class="appendblocklist" id="appendblocklist">Append To Blocklist</button>
+				</div>
+			</div>
+
+			<!-- hardcore mode block -->
+			<div class="optionrow" id="lockdown">
+				<img src="images/enhanced-blocking.png" alt="Enhanced Blocking (optional, proceed with caution)" />
+				<div class="optionleft" id="step1">
+					<br />
+					<h4>Step 1:</h4>
+					<h4>Enable Shift Blocker in Incognito Mode</h4>
+				</div>
+				<div class="optionright" id="step1">
+					<br />
+					<br />
+					Go to the <a href="#lockdown" id="gotoextensions">Chrome Extensions Menu</a> and check the box next to "Allow in incognito" under the listing for Shift Blocker. This will make it harder to circumvent the website blocking mechanism used by Shift Blocker.
+				</div>
+				<div class="optionleft" id="step2">
+					<br />
+					<h4>Step 2:</h4>
+					<h4>Block the Chrome Extensions Menu</h4>
+					<div class="onoffswitch">
+					    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="blockextensions" checked>
+					    <label class="onoffswitch-label" for="blockextensions">
+					        <div class="onoffswitch-inner"></div>
+					        <div class="onoffswitch-switch"></div>
+					    </label>
+					</div>
+				</div>
+				<div class="optionright" id="step2">
+					<br />
+					<br />
+					When this switch is set to ON, the Extensions page will be blocked, making it harder to disable this app.
+				</div>
+				<div class="optionleft" id="step3">
+					<br />
+					<h4>Step 3:</h4>
+					<h4>Enable Password Protection and Set a Password for accessing this options menu</h4>
+					<div class="passwordoptions">
+						<div class="onoffswitch">
+						    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="passprotect" checked>
+						    <label class="onoffswitch-label" for="passprotect">
+						        <div class="onoffswitch-inner"></div>
+						        <div class="onoffswitch-switch"></div>
+						    </label>
+						</div>
+						<span id="randpassbox">
+							<a class="randompassword" id="randompassword">Random Password</a>
+						</span>
+					</div>
+					<div class="passwordsetbox">
+						<p>Enter new password:</p>
+						<input type="password" id="password1">
+						<p>Re-enter password:</p>
+						<input type="password" id="password2">
+						<br />
+						<button class="saveblocklist" id="savepassword">Save New Password</button>
+					</div>
+				</div>
+				<div class="optionright" id="step3">
+					<br />
+					<br />
+					To enable password protection, simply flip the switch to ON and set a password using the two fields provided. Be careful, though - once you enable the password lock, in addition to enabling Shift Blocker in Incognito Mode and blocking the Extensions Menu, you will only be able to access this options menu by entering the correct password.
+					<br />
+					<br />
+					<div class="status" id="passwordstatus"></div>
+					<br />
+					<div class="status" id="passwordstatus2"></div>
+				</div>
+			</div>
+		</div>
+		<p class="footersmalltext">
+			<strong>Shift Blocker has successfully blocked <span id="footertally"></span> blocklist access attempts on this computer.</strong>
+			<br />
+			Copyright 2016 Matt Vukas - For support, visit
+			<a href="https://simpleblocker.com/#support" target="_blank">simpleblocker.com/#support</a>.
+		</p>
+	</body>
+</html>

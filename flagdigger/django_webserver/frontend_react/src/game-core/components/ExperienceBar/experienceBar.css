@@ -1,0 +1,63 @@
+.experience-bar {
+  background: rgba(145, 143, 142, 0.1);
+  border: 1px solid rgba(145, 143, 142, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 25px;
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+/* I'll left it for just case. Maybe in future you'll want to return to this :) */
+.experience-bar .experience-part { 
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgba(145, 143, 142, 0.5);
+  /* border: 1px solid #2fb560; */
+  border-right: none;
+  position: relative;
+}
+
+.experience-bar .experience-part:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  right: 100%;
+  background: rgba(145, 143, 142, 0.3);
+  /* background: rgba(47, 181, 96, 0.3); */
+}
+
+.experience-bar .experience-part:last-child {
+  border-right: 1px solid rgba(145, 143, 142, 0.5);
+  /* border-right: 1px solid #2fb560; */
+}
+
+.experience-bar .experience-part.is-active:before{
+  transition: all .4s ease;
+  right: 0;
+}
+
+.experience-description {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 16px;
+  line-height: 18px;
+  color: white;
+}
+
+.experience-bar-active{
+  height: 25px;
+  transition: all .5s ease;
+  background: rgba(145, 143, 142, 0.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+}

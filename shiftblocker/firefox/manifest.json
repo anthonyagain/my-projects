@@ -1,0 +1,36 @@
+{
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "action": {
+        "default_icon": {
+            "19": "images/icon19.png",
+            "38": "images/icon38.png"
+        },
+        "default_title": "Shift Blocker"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "description": "Easily block distracting or annoying websites and boost your productivity.",
+    "icons": {
+        "128": "images/icon128.png",
+        "16": "images/icon16.png",
+        "48": "images/icon48.png"
+    },
+    "manifest_version": 3,
+    "name": "Shift Blocker",
+    "options_page": "options.html",
+    "permissions": ["tabs", "storage", "unlimitedStorage"],
+    "version": "0.6.1",
+    "applications": {
+      "gecko": {
+        "id": "blahblah@blah"
+      }
+    },
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "shiftblocker@home"
+      }
+    }
+}

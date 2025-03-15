@@ -1,0 +1,40 @@
+{
+  "files": {
+    "static/js/0.c6d4f73a.chunk.js": "/static/js/0.c6d4f73a.chunk.js",
+    "static/js/0.c6d4f73a.chunk.js.map": "/static/js/0.c6d4f73a.chunk.js.map",
+    "main.css": "/static/css/main.5cb5f760.chunk.css",
+    "main.js": "/static/js/main.3a66d96d.chunk.js",
+    "main.js.map": "/static/js/main.3a66d96d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1afa9802.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1afa9802.js.map",
+    "static/js/3.2d149081.chunk.js": "/static/js/3.2d149081.chunk.js",
+    "static/js/3.2d149081.chunk.js.map": "/static/js/3.2d149081.chunk.js.map",
+    "static/js/4.69ecc6ea.chunk.js": "/static/js/4.69ecc6ea.chunk.js",
+    "static/js/4.69ecc6ea.chunk.js.map": "/static/js/4.69ecc6ea.chunk.js.map",
+    "static/js/5.7b6d5064.chunk.js": "/static/js/5.7b6d5064.chunk.js",
+    "static/js/5.7b6d5064.chunk.js.map": "/static/js/5.7b6d5064.chunk.js.map",
+    "static/js/6.bb498b7d.chunk.js": "/static/js/6.bb498b7d.chunk.js",
+    "static/js/6.bb498b7d.chunk.js.map": "/static/js/6.bb498b7d.chunk.js.map",
+    "static/js/7.e521e579.chunk.js": "/static/js/7.e521e579.chunk.js",
+    "static/js/7.e521e579.chunk.js.map": "/static/js/7.e521e579.chunk.js.map",
+    "static/js/8.2f02f6e9.chunk.js": "/static/js/8.2f02f6e9.chunk.js",
+    "static/js/8.2f02f6e9.chunk.js.map": "/static/js/8.2f02f6e9.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ae0076c2fbb724c5bc01906798d0b11f.js": "/precache-manifest.ae0076c2fbb724c5bc01906798d0b11f.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5cb5f760.chunk.css.map": "/static/css/main.5cb5f760.chunk.css.map",
+    "static/js/3.2d149081.chunk.js.LICENSE.txt": "/static/js/3.2d149081.chunk.js.LICENSE.txt",
+    "static/media/close-icon.svg": "/static/media/close-icon.2dae7242.svg",
+    "static/media/home_block2-1.png": "/static/media/home_block2-1.506ce137.png",
+    "static/media/home_block2-2.png": "/static/media/home_block2-2.8ac0227a.png",
+    "static/media/App.css": "/static/media/home_block_1.b3810694.png",
+    "static/media/logo_white.svg": "/static/media/logo_white.2b6291be.svg",
+    "static/media/menu-icon.svg": "/static/media/menu-icon.9eb00ca3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1afa9802.js",
+    "static/js/3.2d149081.chunk.js",
+    "static/css/main.5cb5f760.chunk.css",
+    "static/js/main.3a66d96d.chunk.js"
+  ]
+}

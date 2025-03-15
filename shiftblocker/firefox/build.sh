@@ -1,0 +1,2 @@
+# THIS FILE/COMMAND MUST BE RUN WHILE THE TERMINAL IS IN THE /firefox DIRECTORY
+zip -r -1 shiftblocker.xpi *

@@ -1,0 +1,21 @@
+.title-container {
+    max-width: 500px;
+    max-height: 250px;
+    height: 100%;
+    text-align: center;
+}
+
+.name-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-section {
+    display: flex;
+    margin-top: 15px;
+}
+
+.info-section-discord {
+    text-align: center;
+}

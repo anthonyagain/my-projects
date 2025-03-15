@@ -1,0 +1,16 @@
+node_modules/
+build/
+vagrant-machine/
+django_webserver/django_webserver/settings.py
+# Ignore macOS custom attributes file
+.DS_Store
+# Ignore redis binary dump (dump.rdb) files
+*.rdb
+*.log
+flame_graphs/
+target/
+*.sqlite3
+__pycache__/
+Cargo.lock
+frontend_react/build
+settings.py

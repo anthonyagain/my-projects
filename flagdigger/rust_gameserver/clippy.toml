@@ -1,0 +1,18 @@
+disallowed-methods = [
+  "wrapped2d::dynamics::world::World::bodies",
+  "wrapped2d::dynamics::world::World::new",
+  "wrapped2d::dynamics::world::World::set_contact_listener",
+  "wrapped2d::dynamics::world::World::create_body",
+  "wrapped2d::dynamics::world::World::create_body_with",
+  "wrapped2d::dynamics::world::World::body",
+  "wrapped2d::dynamics::world::World::body_mut",
+  "wrapped2d::dynamics::world::World::destroy_body",
+  "wrapped2d::dynamics::body::Body::position",
+  "wrapped2d::dynamics::body::MetaBody::position",
+  "wrapped2d::dynamics::body::MetaBody::create_fixture",
+  "wrapped2d::dynamics::body::MetaBody::create_fixture_with",
+  "wrapped2d::dynamics::body::MetaBody::create_fast_fixture",
+  "wrapped2d::dynamics::body::MetaBody::create_fast_fixture_with",
+  "wrapped2d::dynamics::fixture::Fixture::body",
+  "wrapped2d::dynamics::fixture::MetaFixture::body"
+]

@@ -1,0 +1,6 @@
+.data/
+*.pt
+*.v
+__pycache__/
+.vector_cache/
+*.sqlite3

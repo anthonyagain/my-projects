@@ -1,0 +1,26 @@
+{% for tweet in example_tweets %}
+<div class="result-tweet">
+  <blockquote class="twitter-tweet" data-lang="en">
+    <p lang="en" dir="ltr">{{ tweet.text }}</p>
+    &mdash; {{ tweet.author_handle }}
+    {% if tweet.author_username %}
+      (@{{ tweet.author_username }})
+    {% endif %}
+    {% if tweet.url %}
+    <a href="{{ tweet.url }}">{{ tweet.datetime_created }}</a>
+    {% else %}
+    <a>{{ tweet.datetime_created }}</a>
+    {% endif %}
+  </blockquote>
+  {% if tweet.prediction == "Positive" %}
+  <div class="sentiment-result green-highlight">
+  {% else %}
+  <div class="sentiment-result red-highlight">
+  {% endif %}
+    <p class="sentiment-text">Prediction:</p>
+    <p class="sentiment-text">{{ tweet.prediction }}</p>
+    <p class="sentiment-text">Confidence:</p>
+    <p class="sentiment-text">{{ tweet.confidence_percent }}%</p>
+  </div>
+</div>
+{% endfor %}

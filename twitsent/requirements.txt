@@ -1,0 +1,11 @@
+# TO INSTALL REQUIREMENTS:
+# 0. Go on the Conda website and install Anaconda
+# 1. Open the Anaconda terminal by Right Click > Run as Admin
+# 2. Run `conda install pytorch=1.3.1 torchvision cudatoolkit=10.1 -c pytorch`
+# (if that command doesn't work or you aren't on windows, find the appropriate command on the PyTorch website)
+# 3. Run `pip install -r requirements.txt` (make sure the pip you use is referring to the Anaconda Python)
+# 4. Run `python -m spacy download en`
+torchtext==0.4.0
+spacy==2.2.3
+tweepy==3.8.0
+django==1.11.26
